@@ -3,50 +3,41 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EleFun Kids School | Learning is Ele-Fun!</title>
+<title>EleFun Preschool | Learning is Ele-Fun!</title>
+<link href="ELE FUN  LOGO.jpeg" rel="icon">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
 
+/* GLOBAL */
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
     font-family:'Poppins',sans-serif;
 }
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    background:#f9fbff;
-    color:#333;
-}
+html{scroll-behavior:smooth;}
+body{background:#f9fbff;color:#333;}
 
 /* HEADER */
-
 header{
     position:fixed;
     width:100%;
     top:0;
     background:white;
-    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    box-shadow:0 2px 15px rgba(0,0,0,0.08);
     z-index:1000;
 }
-
 .nav-container{
     display:flex;
     justify-content:space-between;
     align-items:center;
     padding:15px 5%;
 }
-
-.logo img{
-    height:60px;
-}
-
+.logo img{height:60px;}
+.heads{font-weight:bold;font-size:22px;color:#023047;}
+nav{display:flex;}
 nav a{
     text-decoration:none;
     color:#023047;
@@ -54,18 +45,16 @@ nav a{
     font-weight:600;
     transition:0.3s;
 }
+nav a:hover{color:#fb8500;}
 
-nav a:hover{
-    color:#fb8500;
-}
+.menu-toggle{display:none;font-size:28px;cursor:pointer;}
 
 /* HERO */
-
 .hero{
     margin-top:100px;
-    background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
-    url('YOUR_POSTER_IMAGE_URL') center/cover no-repeat;
-    height:85vh;
+    height:90vh;
+    background:linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),
+    url("https://images.unsplash.com/photo-1588072432836-e10032774350") center/cover no-repeat;
     display:flex;
     align-items:center;
     justify-content:center;
@@ -73,16 +62,8 @@ nav a:hover{
     color:white;
     padding:20px;
 }
-
-.hero h1{
-    font-size:48px;
-}
-
-.hero p{
-    font-size:20px;
-    margin:20px 0;
-}
-
+.hero h1{font-size:50px;}
+.hero p{font-size:20px;margin:20px 0;}
 .btn{
     background:#ffb703;
     padding:12px 30px;
@@ -91,101 +72,72 @@ nav a:hover{
     font-weight:600;
     text-decoration:none;
     transition:0.3s;
+    display:inline-block;
 }
+.btn:hover{background:#fb8500;color:white;}
 
-.btn:hover{
-    background:#fb8500;
-    color:white;
-}
-
-/* SECTION */
-
-.section{
-    padding:80px 8%;
-    text-align:center;
-}
-
-.section h2{
-    font-size:34px;
-    color:#023047;
-    margin-bottom:40px;
-}
+/* SECTIONS */
+.section{padding:70px 5%;text-align:center;}
+.section h2{font-size:34px;color:#023047;margin-bottom:30px;}
 
 /* CARDS */
-
-.cards{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:25px;
-}
-
+.cards{display:flex;flex-wrap:wrap;justify-content:center;gap:25px;}
 .card{
     background:white;
     padding:25px;
-    width:300px;
+    width:280px;
     border-radius:15px;
     box-shadow:0 8px 20px rgba(0,0,0,0.08);
     transition:0.3s;
 }
+.card:hover{transform:translateY(-10px);}
+.card h3{color:#fb8500;margin-bottom:10px;}
 
-.card:hover{
-    transform:translateY(-10px);
-}
-
-.card h3{
-    color:#fb8500;
-    margin-bottom:10px;
-}
-
-/* ADMISSIONS BANNER */
-
+/* ADMISSIONS */
 .admission{
     background:#023047;
     color:white;
-    padding:50px 20px;
+    padding:70px 5%;
+    text-align:center;
 }
+.admission h2{font-size:34px;margin-bottom:15px;}
+.admission p{font-size:18px;margin-bottom:25px;}
 
-.admission h2{
-    font-size:32px;
-}
-
-.admission p{
-    margin-top:10px;
-    font-size:18px;
-}
-
-/* CONTACT */
-
+/* CUSTOM FORM */
 .contact form{
     max-width:600px;
-    margin:auto;
+    margin:30px auto;
+    display:flex;
+    flex-direction:column;
 }
-
 .contact input,
+.contact select,
 .contact textarea{
-    width:100%;
     padding:12px;
-    margin:10px 0;
+    margin:8px 0;
     border-radius:8px;
     border:1px solid #ccc;
 }
-
 .contact button{
     background:#023047;
     color:white;
-    padding:12px 25px;
+    padding:12px;
     border:none;
     border-radius:25px;
     cursor:pointer;
+    font-weight:600;
+    margin-top:12px;
 }
+.contact button:hover{background:#fb8500;}
 
-.contact button:hover{
-    background:#fb8500;
+.success-msg{
+    color:green;
+    font-size:18px;
+    margin-top:12px;
+    display:none;
 }
 
 /* FOOTER */
-
 footer{
     background:#023047;
     color:white;
@@ -193,19 +145,36 @@ footer{
     padding:30px 10px;
 }
 
-footer p{
-    margin:5px 0;
+/* WHATSAPP BUTTON */
+.whatsapp{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    color:white;
+    font-size:22px;
+    padding:15px 18px;
+    border-radius:50%;
+    text-decoration:none;
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
 }
 
-/* MOBILE */
-
+/* MOBILE RESPONSIVE */
 @media(max-width:768px){
-    .hero h1{
-        font-size:32px;
-    }
+    .hero h1{font-size:30px;}
+    .menu-toggle{display:block;}
     nav{
+        position:absolute;
+        top:80px;
+        right:0;
+        background:white;
+        width:200px;
         display:none;
+        flex-direction:column;
+        box-shadow:0 5px 15px rgba(0,0,0,0.1);
     }
+    nav a{margin:15px;}
+    nav.active{display:flex;}
 }
 
 </style>
@@ -216,14 +185,17 @@ footer p{
 <header>
 <div class="nav-container">
     <div class="logo">
-        <!-- Replace with your logo image -->
-        <img src="YOUR_LOGO_IMAGE_URL" alt="EleFun Logo">
+        <img src="ELE FUN  LOGO.jpeg" alt="EleFun Logo">
     </div>
-    <nav>
+
+    <div class="heads">ELE FUN PRESCHOOL</div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+    <nav id="navMenu">
         <a href="#about">About</a>
         <a href="#programs">Programs</a>
         <a href="#admission">Admissions</a>
-        <a href="#contact">Contact</a>
+        <a href="#contact">Apply</a>
     </nav>
 </div>
 </header>
@@ -232,86 +204,92 @@ footer p{
     <div>
         <h1>Learning is Ele-Fun!</h1>
         <p>Where Little Trunks Take Big Steps</p>
-        <a href="#admission" class="btn">Enroll Now</a>
+        <a href="#contact" class="btn">Enroll Now</a>
     </div>
 </section>
 
 <section id="about" class="section">
-    <h2>About EleFun Kids School</h2>
-    <p>
-        EleFun Kids School provides a safe, nurturing, and Montessori-inspired environment
-        where children grow with confidence, creativity, and joy.
-    </p>
+    <h2>About EleFun Preschool</h2>
+    <p>We provide a safe, nurturing and Montessori-inspired environment where children grow with confidence and creativity.</p>
 </section>
 
 <section id="programs" class="section">
     <h2>Programs Offered</h2>
     <div class="cards">
-        <div class="card">
-            <h3>Daycare</h3>
-            <p>Safe and homely care for your little ones.</p>
-        </div>
-        <div class="card">
-            <h3>Playgroup</h3>
-            <p>Interactive learning through creative play.</p>
-        </div>
-        <div class="card">
-            <h3>Nursery</h3>
-            <p>Building early literacy and social skills.</p>
-        </div>
-        <div class="card">
-            <h3>LKG & UKG</h3>
-            <p>Preparing children for primary school success.</p>
-        </div>
-    </div>
-</section>
-
-<section class="section">
-    <h2>Why Choose Us?</h2>
-    <div class="cards">
-        <div class="card">
-            <h3>Safe Environment</h3>
-            <p>CCTV monitoring & secure campus.</p>
-        </div>
-        <div class="card">
-            <h3>Qualified Teachers</h3>
-            <p>Loving and experienced educators.</p>
-        </div>
-        <div class="card">
-            <h3>Fun Learning</h3>
-            <p>Creative curriculum with play-based learning.</p>
-        </div>
+        <div class="card"><h3>Daycare</h3><p>Safe and homely care for your little ones.</p></div>
+        <div class="card"><h3>Playgroup</h3><p>Interactive learning through creative play.</p></div>
+        <div class="card"><h3>Nursery</h3><p>Building early literacy and social skills.</p></div>
+        <div class="card"><h3>LKG & UKG</h3><p>Preparing children for primary school success.</p></div>
     </div>
 </section>
 
 <section id="admission" class="admission">
     <h2>Admissions Open 2026–27</h2>
-    <p>Enroll now to secure your child’s bright future!</p>
-    <br>
+    <p>Limited seats available. Enroll now to secure your child’s future!</p>
     <a href="#contact" class="btn">Apply Now</a>
 </section>
 
 <section id="contact" class="section contact">
-    <h2>Contact Us</h2>
-    <p>📍 Your Address Here</p>
-    <p>📞 +91 XXXXX XXXXX</p>
-    <p>📧 info@elefunkids.com</p>
+    <h2>Apply for Admission</h2>
 
-    <br>
+    <form id="admissionForm">
+        <input type="text" name="parentName" placeholder="Parent Name" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="text" name="phone" placeholder="Phone Number" required>
+        <input type="text" name="childName" placeholder="Child Name" required>
 
-    <form>
-        <input type="text" placeholder="Parent Name" required>
-        <input type="email" placeholder="Email" required>
-        <input type="text" placeholder="Phone Number" required>
-        <textarea rows="4" placeholder="Message"></textarea>
-        <button type="submit">Send Inquiry</button>
+        <select name="className" required>
+            <option value="">Select Class</option>
+            <option>Daycare</option>
+            <option>Playgroup</option>
+            <option>Nursery</option>
+            <option>LKG</option>
+            <option>UKG</option>
+        </select>
+
+        <textarea name="message" placeholder="Message"></textarea>
+
+        <button type="submit">Submit Application</button>
     </form>
+
+    <p class="success-msg" id="successMsg">✅ Application submitted successfully!</p>
 </section>
 
 <footer>
-    <p>© 2026 EleFun Kids School</p>
+    <p>© 2026 EleFun Preschool</p>
     <p>Learning • Playing • Growing</p>
 </footer>
+
+<a href="https://wa.me/91XXXXXXXXXX" class="whatsapp" target="_blank">💬</a>
+
+<script>
+function toggleMenu(){
+    document.getElementById("navMenu").classList.toggle("active");
+}
+
+document.getElementById("admissionForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    const formData = new FormData(this);
+
+    fetch("https://script.google.com/macros/s/AKfycbwrzhCEu2EtyxybJH-Z30sBaHajTl0WYS-uXE8mTe0-pqTcwg1peUtAaRttRtORGa4hcA/exec", {
+        method: "POST",
+        body: JSON.stringify({
+            parentName: formData.get("parentName"),
+            email: formData.get("email"),
+            phone: formData.get("phone"),
+            childName: formData.get("childName"),
+            className: formData.get("className"),
+            message: formData.get("message")
+        })
+    })
+    .then(response => {
+        document.getElementById("successMsg").style.display = "block";
+        document.getElementById("admissionForm").reset();
+    })
+    .catch(error => alert("Error submitting form"));
+});
+</script>
 
 </body>
 </html>
